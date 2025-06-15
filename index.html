@@ -28,7 +28,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding: 2rem;
+      padding: 4rem 2rem;
       text-align: center;
       position: relative;
       z-index: 2;
@@ -126,6 +126,15 @@
       p { font-size: 1.5rem; }
       nav { flex-wrap: wrap; }
     }
+    @media (max-width: 480px) {
+  h1 { font-size: 1.5rem; }
+  p, li { font-size: 0.95rem; }
+  .profile-img { width: 90px; height: 90px; }
+  nav a { font-size: 0.9rem; }
+  section { padding: 1.5rem; }
+}
+
+
 
     #contact p i {
   color: #455667;
@@ -220,7 +229,7 @@
 
   <section id="skills">
   <h1>SKILLS</h1> <br>
-  <ul style="list-style-type: none; padding: 0; text-align: left; max-width: 600px;">
+  <ul style="list-style-type: none; padding: 0; text-align: left; width: 90%; max-width: 600px;">
     <li><strong>Programming Languages:</strong> Python, C, C++</li> <br>
     <li><strong>Web Technologies:</strong> HTML, CSS, JavaScript, WordPress</li> <br>
     <li><strong>Database:</strong> SQL</li> <br>
@@ -233,7 +242,7 @@
 
   <section id="projects">
   <h1>PROJECTS</h1>
-  <ol style="text-align: left; max-width: 700px;">
+  <ol style="text-align: left; width: 90%; max-width: 700px;">
     <li>
       <strong>AI-Powered Query Assistant</strong><br>
       Built a web app using Streamlit that answers user queries using AI.<br>
@@ -261,27 +270,24 @@
   <section id="contact">
   <h1>CONTACT</h1><br>
   <ul class="contact-list">
-  
-  <p>
+  <li>
     <i class="fas fa-envelope"></i> 
-    <a href="mailto:nishanthi.cs.online@gmail.com"> Mail : nishanthi.cs.online@gmail.com</a>
-  </p><br>
-  
-  <p>
+    <a href="mailto:nishanthi.cs.online@gmail.com">Mail: nishanthi.cs.online@gmail.com</a>
+  </li>
+  <li>
     <i class="fab fa-linkedin"></i> 
-    <a href="https://www.linkedin.com/in/nishanthi-r-" target="_blank"> LinkedIn : linkedin.com/in/nishanthi-r-</a>
-  </p><br>
-  
-  <p>
+    <a href="https://www.linkedin.com/in/nishanthi-r-" target="_blank">LinkedIn: linkedin.com/in/nishanthi-r-</a>
+  </li>
+  <li>
     <i class="fab fa-github"></i> 
-    <a href="https://www.github.com/nishanthi04" target="_blank"> GitHub : github.com/nishanthi04</a>
-  </p><br>
-  
-  <p>
+    <a href="https://www.github.com/nishanthi04" target="_blank">GitHub: github.com/nishanthi04</a>
+  </li>
+  <li>
     <i class="fas fa-phone"></i> 
-    Mobile : 9944296726
-  </p>
-  </ul>
+    Mobile: 9944296726
+  </li>
+</ul>
+
 </section>
 
 </body>
