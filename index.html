@@ -3,18 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Animated Portfolio</title>
+  <title>Portfolio</title>
   <style>
-    /* Import Custom Fonts */
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Open+Sans&display=swap');
 
-    /* Reset & Base Styles */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       scroll-behavior: smooth;
     }
+
     body {
       font-family: 'Open Sans', sans-serif;
       color: rgb(213, 207, 207);
@@ -44,14 +43,16 @@
       padding: 1rem;
       z-index: 1000;
     }
+
     nav a {
-      color: rgb(160, 200, 132);;
+      color: rgb(160, 200, 132);
       margin: 0 1rem;
       text-decoration: none;
-      font-family: 'Orbitron', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      font-family: 'Orbitron', Impact, 'Arial Narrow Bold';
       font-weight: bold;
       transition: color 0.3s;
     }
+
     nav a:hover {
       color: #00ffff;
     }
@@ -63,25 +64,26 @@
       color: rgb(160, 200, 132);
       animation: fadeIn 2s ease-in-out;
     }
+
     h2 {
       font-size: 1.5rem;
       font-family: Haettenschweiler, 'Arial Narrow Bold';
       animation: fadeIn 6s ease-in-out;
     }
+
     p {
       font-size: 1.3rem;
       font-family: Arial, sans-serif;
       max-width: 600px;
       line-height: 1.5;
-        text-align: justify;
-        
-        
+      text-align: left;
     }
 
     .typing-text::after {
       content: '|';
       animation: blink 1s infinite;
     }
+
     @keyframes blink {
       0%, 100% { opacity: 1; }
       50% { opacity: 0; }
@@ -106,12 +108,12 @@
       font-size: 2rem;
       transition: transform 0.3s;
     }
+
     .socials a:hover {
       transform: scale(1.3);
       color: #00ffff;
     }
 
-    /* Particle Background Style */
     #particles-js {
       position: fixed;
       top: 0;
@@ -121,51 +123,76 @@
       z-index: 0;
     }
 
+    .projects-list li,
+    .skills-list li {
+      font-size: 1.3rem;
+      text-align: justify;
+      margin-bottom: 0.5rem;
+      position: relative;
+      padding-left: 1.2rem;
+      list-style: none;
+    }
+
+    .projects-list li::before,
+    .skills-list li::before {
+      content: "\2605  ";
+      color: rgb(160, 200, 132);
+      position: absolute;
+      left: 0;
+    }
+
     @media (max-width: 768px) {
       h1 { font-size: 2rem; }
       p { font-size: 1.5rem; }
       nav { flex-wrap: wrap; }
     }
+
     @media (max-width: 480px) {
-  h1 { font-size: 1.5rem; }
-  p, li { font-size: 0.95rem; }
-  .profile-img { width: 90px; height: 90px; }
-  nav a { font-size: 0.9rem; }
-  section { padding: 1.5rem; }
-}
-
-
+      h1 { font-size: 1.5rem; }
+      p, li { font-size: 0.95rem; }
+      .profile-img { width: 90px; height: 90px; }
+      nav a { font-size: 0.9rem; }
+      section { padding: 1.5rem; }
+    }
 
     #contact p i {
-  color: #455667;
-  margin-right: 8px;
-}
-#contact a {
-  color: inherit;
-  text-decoration: none;
-}
-#contact a:hover {
-  text-decoration: underline;
-}
+      color: #455667;
+      margin-right: 8px;
+    }
 
-.contact-list {
-  list-style: none;
-  padding-left: 0;
-}
-.contact-list li::before {
-  content: "★ ";  /* Replace with "•", "→", etc. */
-  color: whitesmoke;
-}
-.contact-list li {
-  margin-bottom: 1rem;
-}
+    #contact a {
+      color: inherit;
+      text-decoration: none;
+    }
 
+    #contact a:hover {
+      text-decoration: underline;
+      text-wrap: break-word;
+    }
+
+    .contact-list {
+      list-style: none;
+      padding-left: 0;
+      text-align: left;
+      font-size: 1.3rem;
+    }
+
+    .contact-list li::before {
+      content: "\2605  ";
+      color: rgb(160, 200, 132);
+      position: absolute;
+      left: 0;
+    }
+
+    .contact-list li {
+      margin-bottom: 1rem;
+      position: relative;
+      padding-left: 1.2rem;
+    }
   </style>
-  <!-- Font Awesome & Particles.js -->
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script>
-    // Typing animation for Home section
     document.addEventListener("DOMContentLoaded", function () {
       const text = "Welcome to My Portfolio";
       const el = document.getElementById("typing");
@@ -179,7 +206,6 @@
       }
       type();
 
-      // Initialize particles.js
       particlesJS("particles-js", {
         particles: {
           number: { value: 60, density: { enable: true, value_area: 800 } },
@@ -212,7 +238,6 @@
 
   <section id="home">
     <img src="profile.webp" alt="My Profile" class="profile-img" />
-
     <h1 id="typing" class="typing-text"></h1>
     <h2>I'm NISHANTHI </h2>
     <div class="socials">
@@ -228,67 +253,36 @@
   </section>
 
   <section id="skills">
-  <h1>SKILLS</h1> <br>
-  <ul style="list-style-type: none; padding: 0; text-align: left; width: 90%; max-width: 600px;">
-    <li><strong>Programming Languages:</strong> Python, C, C++</li> <br>
-    <li><strong>Web Technologies:</strong> HTML, CSS, JavaScript, WordPress</li> <br>
-    <li><strong>Database:</strong> SQL</li> <br>
-    <li><strong>Cloud Platforms:</strong> Basic knowledge of AWS & Google Cloud (from courses)</li> <br>
-    <li><strong>Tools:</strong> MS Office, GitHub, Streamlit</li> <br>
-    <li><strong>Other Areas:</strong> Data Engineering, AI & ML basics, Cybersecurity (Project-based)</li> <br>
-    <li><strong>Soft Skills:</strong> Teamwork, Communication, Time Management</li>
-  </ul>
-</section>
+    <h1>SKILLS</h1>
+    <ul class="skills-list">
+      <li><strong>Programming Languages:</strong> Python, C, C++</li>
+      <li><strong>Web Technologies:</strong> HTML, CSS, JavaScript, WordPress</li>
+      <li><strong>Database:</strong> SQL</li>
+      <li><strong>Cloud Platforms:</strong> Basic knowledge of AWS & Google Cloud (from courses)</li>
+      <li><strong>Tools:</strong> MS Office, GitHub, Streamlit</li>
+      <li><strong>Other Areas:</strong> Data Engineering, AI & ML basics, Cybersecurity (Project-based)</li>
+      <li><strong>Soft Skills:</strong> Teamwork, Communication, Time Management</li>
+    </ul>
+  </section>
 
   <section id="projects">
-  <h1>PROJECTS</h1>
-  <ol style="text-align: left; width: 90%; max-width: 700px;">
-    <li>
-      <strong>AI-Powered Query Assistant</strong><br>
-      Built a web app using Streamlit that answers user queries using AI.<br>
-      <em>Technologies:</em> Python, OpenAI API, Streamlit
-    </li><br>
-    <li>
-      <strong>Eco-Friendly E-Waste Algorithm</strong><br>
-      Designed a model to promote environmentally sustainable disposal of electronic waste.<br>
-      <em>Focus:</em> Environmental impact + AI logic
-    </li><br>
-    <li>
-      <strong>Retrieval-Augmented Generation (RAG) AI Application</strong><br>
-      Implemented an AI app that retrieves documents and gives context-aware responses.<br>
-      <em>Technologies:</em> Python, LangChain, Vector DBs
-    </li><br>
-    <li>
-      <strong>Fitness App (Under Development)</strong><br>
-      App connects users with gym trainers and offers personalized fitness and diet plans.<br>
-      <em>Features:</em> Progress tracking, educational content, goal setting
-    </li>
-  </ol>
-</section>
-
+    <h1>PROJECTS</h1>
+    <ul class="projects-list">
+      <li><strong>AI-Powered Query Assistant:</strong> Built a web app using Streamlit that answers user queries using AI. <em>Technologies:</em> Python, OpenAI API, Streamlit</li>
+      <li><strong>Eco-Friendly E-Waste Algorithm:</strong> Designed a model to promote environmentally sustainable disposal of electronic waste. <em>Focus:</em> Environmental impact + AI logic</li>
+      <li><strong>Retrieval-Augmented Generation (RAG) AI Application:</strong> Implemented an AI app that retrieves documents and gives context-aware responses. <em>Technologies:</em> Python, LangChain, Vector DBs</li>
+      <li><strong>Fitness App (Under Development):</strong> App connects users with gym trainers and offers personalized fitness and diet plans. <em>Features:</em> Progress tracking, educational content, goal setting</li>
+    </ul>
+  </section>
 
   <section id="contact">
-  <h1>CONTACT</h1><br>
-  <ul class="contact-list">
-  <li>
-    <i class="fas fa-envelope"></i> 
-    <a href="mailto:nishanthi.cs.online@gmail.com">Mail: nishanthi.cs.online@gmail.com</a>
-  </li>
-  <li>
-    <i class="fab fa-linkedin"></i> 
-    <a href="https://www.linkedin.com/in/nishanthi-r-" target="_blank">LinkedIn: linkedin.com/in/nishanthi-r-</a>
-  </li>
-  <li>
-    <i class="fab fa-github"></i> 
-    <a href="https://www.github.com/nishanthi04" target="_blank">GitHub: github.com/nishanthi04</a>
-  </li>
-  <li>
-    <i class="fas fa-phone"></i> 
-    Mobile: 9944296726
-  </li>
-</ul>
-
-</section>
-
+    <h1>CONTACT</h1>
+    <ul class="contact-list">
+      <li><i class="fas fa-envelope"></i> <a href="mailto:nishanthi.cs.online@gmail.com">Mail: nishanthi.cs.online@gmail.com</a></li>
+      <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/nishanthi-r-" target="_blank">LinkedIn: linkedin.com/in/nishanthi-r-</a></li>
+      <li><i class="fab fa-github"></i> <a href="https://www.github.com/nishanthi04" target="_blank">GitHub: github.com/nishanthi04</a></li>
+      <li><i class="fas fa-phone"></i> Mobile: 9944296726</li>
+    </ul>
+  </section>
 </body>
 </html>
